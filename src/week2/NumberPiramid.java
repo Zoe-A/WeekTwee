@@ -1,4 +1,4 @@
-package almond_weektwee;
+package week2;
 
 public class NumberPiramid {
     public static void main(String[] args) {
