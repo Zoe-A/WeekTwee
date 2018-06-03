@@ -1,6 +1,6 @@
 package week2;
 
-public class ValueCounter {
+public class VowelCounter {
     public static void main(String[] args) {
 
 

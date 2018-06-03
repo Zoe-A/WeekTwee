@@ -1,4 +1,4 @@
-package week2;
+/*package week2;
 
 public class OefMatrix {
     public static void main(String[] args) {
@@ -38,3 +38,4 @@ public class OefMatrix {
     }
 
 }
+*/

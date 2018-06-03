@@ -11,18 +11,28 @@ public class LottoGenerator {
 
     public static void main(String[] args) {
     int max = 1;
-    int min = 45;
+    int min = 10;
+    int a;
+    int b;
+    int c;
 
 
-    int a = berekenRandomGetal(min, max);
-    int b = berekenRandomGetal(min, max);
-    int c = berekenRandomGetal(min, max);
+    do {
+
+        a = berekenRandomGetal(min, max);
+        b = berekenRandomGetal(min, max);
+        c = berekenRandomGetal(min, max);
+
+        int[] getallen = {a, b, c};
+        for (int y : getallen){
+            System.out.println(y);
+        }
+    }while (a == b || a == c || b == c);
 
 
-    int[] getallen = {a, b, c};
-     for (int y : getallen){
-          System.out.println(y);
-     }
+
+
+
 
 
     }
