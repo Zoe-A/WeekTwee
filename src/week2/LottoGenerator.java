@@ -12,9 +12,8 @@ public class LottoGenerator {
     public static void main(String[] args) {
     int max = 1;
     int min = 10;
-    int a;
-    int b;
-    int c;
+    int a, b, c, d, e, f;
+
 
 
     do {
@@ -22,6 +21,9 @@ public class LottoGenerator {
         a = berekenRandomGetal(min, max);
         b = berekenRandomGetal(min, max);
         c = berekenRandomGetal(min, max);
+        d = berekenRandomGetal(min, max);
+        e = berekenRandomGetal(min, max);
+        f = berekenRandomGetal(min, max);
 
         int[] getallen = {a, b, c};
         for (int y : getallen){
