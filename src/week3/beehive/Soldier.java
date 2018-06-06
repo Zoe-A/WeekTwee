@@ -1,15 +1,28 @@
 package week3.beehive;
 
-public class Soldier {
-        int hitpoint = 10;
-    int strenght = 5;
-    int armour = 2;
+import java.util.Scanner;
 
+public class Soldier {
+    int hitpoint;
+    int strenght;
+    int armour;
+    String name;
+
+    public Soldier(int inhitpoint, int instrenght, int inarmour, String inname){
+    hitpoint = inhitpoint;
+    strenght = instrenght;
+    armour = inarmour;
+    name = inname;
+    }
 
     public void attack(Soldier enemy){
 
         enemy.hitpoint -= (this.strenght * 1.5) - enemy.armour;
         this.hitpoint -= (enemy.strenght * 0.5) - this.armour;
+    }
+
+    public void heal (){
+        this.hitpoint = this.hitpoint*2;
     }
 
 
@@ -30,25 +43,62 @@ public class Soldier {
         return result;
     }
 
+    public static String printStatus(Soldier A, Soldier B){
+        String status;
+           status = A.name + " hitpoints : " + A.hitpoint + " "+ B.name + " hitpoints : " + B.hitpoint;
+
+        return status;
+    }
+
+    public static String checkAnswer(String choice){
+        while (!choice.equalsIgnoreCase("Attack") && !choice.equalsIgnoreCase("Heal")){
+            System.out.println("Please enter a valid option. Attack or Heal.");
+            Scanner sc = new Scanner(System.in);
+            choice = sc.next();
+        }
+        return choice;
+    }
 
     public static void main(String[] args) {
 
-        Soldier sylvester = new Soldier();
-        Soldier arnold = new Soldier();
+        Soldier sylvester = new Soldier(10, 5, 2, "Sylvester");
+        Soldier arnold = new Soldier(10, 5, 2, "Arnold");
 
-        sylvester.attack(arnold);
+        while (arnold.hitpoint > 0 && sylvester.hitpoint > 0) {
 
+            System.out.println("What does Sylvester do? Choose Attack or Heal.");
+            Scanner sc = new Scanner(System.in);
+            String answer = sc.next();
+            answer = checkAnswer(answer);
+            if (answer.equalsIgnoreCase("Attack")) {
+                sylvester.attack(arnold);
+                System.out.println(printStatus(arnold, sylvester));
+            } else {
+                sylvester.heal();
+                System.out.println(printStatus(arnold, sylvester));
+            }
 
-        System.out.println( "Arnold hitpoints: " + arnold.hitpoint);
-        System.out.println("Sylvester hitpoints: " + sylvester.hitpoint);
+            System.out.println();
 
-        arnold.attack(sylvester);
+            System.out.println("How does Arnold respond? Choose Attack or Heal.");
+            sc = new Scanner(System.in);
+            answer = sc.next();
+            answer = checkAnswer(answer);
+            if (answer.equalsIgnoreCase("Attack")) {
+                arnold.attack(sylvester);
+                System.out.println(printStatus(arnold, sylvester));
+            } else {
+                arnold.heal();
+                System.out.println(printStatus(arnold, sylvester));
+            }
 
-        System.out.println("Arnold hitpoints: " + arnold.hitpoint);
-        System.out.println("Sylvester hitpoints: " + sylvester.hitpoint);
+            System.out.println();
+        }
+
 
         String resultMain = printResults(arnold, sylvester);
         System.out.println(resultMain);
+
 
 
 

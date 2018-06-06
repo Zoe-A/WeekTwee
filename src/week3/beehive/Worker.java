@@ -41,7 +41,6 @@ public class Worker {
         Worker willy = new Worker(10); // object
         willy.gatherNectar();
 
-
         /*Worker[] workers = new Worker[500];
         for(int i=0; i < workers.length; i++){
             workers[i] : new Worker();*/
