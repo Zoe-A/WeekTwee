@@ -2,17 +2,18 @@ package week3.beehive;
 
 import java.util.Scanner;
 
-public class NurseT {
+public class NurseT extends Bee{
     int nectar;
     int patience;
     int honey;
-    String name;
 
 
-    public NurseT(int innectar, int inpatience, String inname){
+
+    public NurseT(String inname, int innectar, int inpatience){
+        super (inname);
         nectar = innectar;
         patience = inpatience;
-        name = inname;
+
     }
 
     public void makeHoney() {
@@ -21,9 +22,11 @@ public class NurseT {
         honey += 3;
     }
 
-    public void feedLarvae() {
-        this.honey -= 3;
-        this.patience -=1;
+    public void feedLarvae(LarvaeT toFeed) {
+        this.honey -=  3;
+        this.patience -= 1;
+        toFeed.food += 2;
+
 
     }
 
@@ -36,14 +39,14 @@ public class NurseT {
     }
 
     public String printStatus(){
-        String s = "Status " + this.name + "  | Nectar : " + this.nectar + " | Patience : " + this.patience + " | Honey : " + this.honey;
+        String s = "Status " + getName() + "  | Nectar : " + this.nectar + " | Patience : " + this.patience + " | Honey : " + this.honey;
         return s;
     }
 
 
     public static void main(String[] args) {
 
-        NurseT silly = new NurseT(30, 20,"Silly");
+        NurseT silly = new NurseT("Silly",30, 20);
         /*NurseT giggles = new NurseT(15, 5, "Giggles");*/
         System.out.println(silly.printStatus());
 
@@ -62,7 +65,7 @@ public class NurseT {
             int choice  = sc.nextInt();
             switch (choice) {
                 case 1:
-                    silly.feedLarvae();
+                    silly.feedLarvae(junior);
                     break;
                 case 2:
                     silly.nurture();

@@ -2,17 +2,16 @@ package week3.beehive;
 
 import java.util.Scanner;
 
-public class Soldier {
+public class Soldier extends Bee {
     int hitpoint;
     int strenght;
     int armour;
-    String name;
 
-    public Soldier(int inhitpoint, int instrenght, int inarmour, String inname){
-    hitpoint = inhitpoint;
-    strenght = instrenght;
-    armour = inarmour;
-    name = inname;
+    public Soldier(int inhitpoint, int instrenght, int inarmour, String name){
+        super(name);
+        hitpoint = inhitpoint;
+        strenght = instrenght;
+        armour = inarmour;
     }
 
     public void attack(Soldier enemy){
@@ -45,7 +44,7 @@ public class Soldier {
 
     public static String printStatus(Soldier A, Soldier B){
         String status;
-           status = A.name + " hitpoints : " + A.hitpoint + " "+ B.name + " hitpoints : " + B.hitpoint;
+           status = A.getName() + " hitpoints : " + A.hitpoint + " "+ B.getName() + " hitpoints : " + B.hitpoint;
 
         return status;
     }

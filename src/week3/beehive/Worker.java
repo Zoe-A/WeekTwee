@@ -1,6 +1,6 @@
 package week3.beehive;
 
-public class Worker {
+public class Worker extends Bee{
     int capacity;
     int load;
 
