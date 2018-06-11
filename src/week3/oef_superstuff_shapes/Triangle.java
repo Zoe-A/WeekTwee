@@ -1,16 +1,17 @@
 package week3.oef_superstuff_shapes;
 
 public class Triangle extends Shape {
-    private double base;
-    private double height;
+    private double base = 2;
+    private double height = 3;
 
     @Override
     public void area() {
-        System.out.println("area methode");
+        double area = (base*height)/2;
+        System.out.println("The area of this triangle is " + area);
     }
 
     @Override
     public void perimeter() {
-        System.out.println("perimeter methode");
+        System.out.println("Whut?");
     }
 }

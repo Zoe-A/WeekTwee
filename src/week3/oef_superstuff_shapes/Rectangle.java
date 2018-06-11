@@ -1,16 +1,18 @@
 package week3.oef_superstuff_shapes;
 
 public class Rectangle extends Shape {
-    private double width;
-    private double height;
+    private double width = 9;
+    private double height = 3;
 
     @Override
     public void area() {
-        System.out.println("area methode");
+        double area = width*height;
+        System.out.println("The area of the rectangle is " + area);
     }
 
     @Override
     public void perimeter() {
-        System.out.println("perimeter methode");
+        double perimeter = 2*(width+height);
+        System.out.println("The perimeter of this rechtangle is " + perimeter);
     }
 }
