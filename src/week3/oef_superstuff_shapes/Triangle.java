@@ -18,7 +18,7 @@ public class Triangle extends Shape {
     @Override
     public void perimeter(double[] x) {
 
-        System.out.println("Whut?");
+        System.out.println("The perimeter of the triangle is Whut?");
     }
 
     @Override
