@@ -2,22 +2,22 @@ package week3.oef_superstuff_shapes;
 
 public abstract class Shape {
 
+    double a = 0, b = 0;
 
-    public abstract void area ();
-    public abstract void perimeter ();
+    public abstract void area (double[] x );
+    public abstract void perimeter (double[] x);
+    public abstract double[] askValueb();
 
     public static void main(String[] args) {
-        Rectangle s = new Rectangle();
-        s.area();
-        s.perimeter();
 
-        Circle c = new Circle();
-        c.area();
-        c.perimeter();
+        Rommel shape1 = new Rommel();
 
-        Triangle t = new Triangle();
-        t.area();
-        t.perimeter();
+        int choice = shape1.askInputShape();
+        shape1.calculation(choice);
+
+
+
+
     }
 
 }
