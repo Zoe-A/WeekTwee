@@ -65,4 +65,13 @@ public class Breuk {
     this.noemer = this.noemer * that.noemer;
 
     }
+
+    public void delen(Breuk that){
+        int nieuweTeller = this.noemer;
+        int nieuweNoemer = this.teller;
+
+        this.teller = that.teller * nieuweTeller;
+        this.noemer = that.noemer * nieuweNoemer;
+
+    }
 }

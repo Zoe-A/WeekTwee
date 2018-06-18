@@ -37,4 +37,26 @@ public class BreukTest {
         Assert.assertEquals(a.getTeller(), 0);
         Assert.assertEquals(a.getNoemer(), 4);
     }
+
+    @Test
+    public void vermenigvuldigdMaal() {
+        Breuk a = new Breuk (1, 2);
+        Breuk b = new Breuk (1, 2);
+
+        a.maal(b);
+
+        Assert.assertEquals(a.getTeller(), 1);
+        Assert.assertEquals(a.getNoemer(), 4);
+    }
+
+    @Test
+    public void deeltDelen() {
+        Breuk a = new Breuk (1, 2);
+        Breuk b = new Breuk (1, 2);
+
+        a.delen(b);
+
+        Assert.assertEquals(a.getTeller(), 2);
+        Assert.assertEquals(a.getNoemer(), 2);
+    }
 }
